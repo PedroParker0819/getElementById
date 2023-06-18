@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prompt, Methods, and Element's getElementById() and innerHTML</title>
+</head>
+<body>
+<h1>Prompt, Methods, and Element's getElementById() and innerHTML</h1>
+<p>This page demonstrates how to use the prompt() method, methods, and the Element's getElementById() and innerHTML properties.</p>
+<p>Enter a number: <input type="text" id="number"></p>
+<p>The square root of the number is: <span id="squareRoot"></span></p>
+<p>Is the number an integer? <span id="integer"></span></p>
+<p>Is the number NaN? <span id="NaN"></span></p>
+<p>The number rounded down is: <span id="roundDown"></span></p>
+<p>The number rounded up is: <span id="roundUp"></span></p>
+<p>The number with two decimal places is: <span id="twoDecimalPlaces"></span></p>
+<script>
+function getNumber() {
+  // Get the number from the input field.
+  var number = document.getElementById("number").value;
+}
+
+  // Check if the number is a valid number.
+  if (!Number.isFinite(number)) {
+    // The number is not a valid number.
+    document.getElementById("squareRoot").innerHTML = "NaN";
+    document.getElementById("integer").innerHTML = "false";
+    document.getElementById("NaN").innerHTML = "true";
+    document.getElementById("roundDown").innerHTML = "NaN";
+    document.getElementById("roundUp").innerHTML = "NaN";
+    document.getElementById("twoDecimalPlaces").innerHTML = "NaN";
+  } else {
+    // The number is a valid number.
+    document.getElementById("squareRoot").innerHTML = Math.sqrt(number);
+    document.getElementById("integer").innerHTML = (number % 1 === 0);
+    document.getElementById("NaN").innerHTML = "false";
+    document.getElementById("roundDown").innerHTML = Math.floor(number);
+    document.getElementById("roundUp").innerHTML = Math.ceil(number);
+    document.getElementById("twoDecimalPlaces");
+}
